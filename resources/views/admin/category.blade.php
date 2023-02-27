@@ -11,10 +11,44 @@
             font-size: 32px;
             padding-bottom: 32px;
         }
-
-        .input_color{
-            color: black;
+        
+        .table-container{
+          width: 100%;
+          display: flex;
+          justify-content: center;        
         }
+
+        .center{          
+          width: 50%;
+          text-align: center;                                        
+          margin-top: 50px;
+          border-radius: 12px;                                      
+        }
+
+        .center tr td:nth-child(2){
+          width: 20%;
+        }
+
+        .center tr:nth-child(even){
+          background-color: #3A3B3C;          
+        }
+
+        .center tr:nth-child(odd){
+          background-color: #202020;          
+        }    
+        
+        .center tr td:nth-child(n){
+          border-right: 3px solid #121212;       
+        }        
+
+        .center tr, .center td{          
+          padding: 12px;
+        }
+
+        input[type="text"]{
+          background-color : #151515; 
+        }     
+        
     </style>
   </head>
   <body>
@@ -26,7 +60,7 @@
         <!-- partial:partials/_navbar.html -->
         @include('admin.navbar')
         <div class="main-panel">
-          <div class="content-wrapper">
+          <div class="content-wrapper" style="background-color: #121212">
 
             @if(session()->has('message'))
 
@@ -38,14 +72,31 @@
             @endif
 
             <div class="div_center">
-                <h2>Add Category</h2>
+                <h2>View Category</h2>
 
                 <form action="{{url('/add_category')}}" method="POST">
                     @csrf
-                    <input type="text" name="category" placeholder="Category Name" class="input_color">
-                    <input type="submit" name="submit" value="Add Category" class="btn btn-primary">
+                    <input type="text" name="category" placeholder="Category Name" class="input_color" style="margin-right: 10px; border-radius: 6px;">
+                    <input type="submit" name="submit" value="Add" class="btn btn-success">
                 </form>
             </div>
+
+            <div class="table-container">
+              <table class="center">
+                <tr style="border-bottom: 3px solid #121212">
+                  <td style="font-weight: bold;">Category Name</td>
+                  <td style="font-weight: bold;">Action</td>
+                </tr>
+
+                @foreach($data as $data)
+                <tr>
+                  <td>{{$data->category_name}}</td>
+                  <td><a onclick="return confirm('Confirm Deletion?')" href="{{url('delete_category', $data->id)}}" class="btn btn-danger">Delete</a></td>
+                </tr>
+                @endforeach
+              </table>
+            </div>
+          
           </div>        
         </div>        
       </div>
