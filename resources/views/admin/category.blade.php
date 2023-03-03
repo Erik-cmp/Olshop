@@ -76,7 +76,7 @@
 
                 <form action="{{url('/add_category')}}" method="POST">
                     @csrf
-                    <input type="text" name="category" placeholder="Category Name" class="input_color" style="margin-right: 10px; border-radius: 6px;">
+                    <input type="text" name="category" placeholder="Category Name" style="margin-right: 10px; border-radius: 6px;">
                     <input type="submit" name="submit" value="Add" class="btn btn-success">
                 </form>
             </div>
