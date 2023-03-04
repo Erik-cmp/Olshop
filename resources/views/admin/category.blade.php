@@ -48,6 +48,11 @@
         input[type="text"]{
           background-color : #151515; 
         }     
+
+        .center tr:nth-child(1){
+            font-size: 18px;
+            padding: 14px;
+        }        
         
     </style>
   </head>
@@ -76,7 +81,7 @@
 
                 <form action="{{url('/add_category')}}" method="POST">
                     @csrf
-                    <input type="text" name="category" placeholder="Category Name" style="margin-right: 10px; border-radius: 6px;">
+                    <input type="text" name="category" placeholder="Category Name" style="margin-right: 10px; border-radius: 6px;" required="">
                     <input type="submit" name="submit" value="Add" class="btn btn-success">
                 </form>
             </div>

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <base href="/public">
+
     @include('admin.css')
     <style>
         .div_center{
@@ -64,47 +66,52 @@
             @endif
 
             <div class="div_center">
-                <h2>Add Product</h2>
+                <h2>Update Product</h2>
 
-                <form action="{{url('/add_product')}}" method="POST" enctype="multipart/form-data" class="form_add">
+                <form action="{{url('/update_product_confirm', $product->id)}}" method="POST" enctype="multipart/form-data" class="form_add">
                     @csrf
                     <div class="div_design">
                         <label for="">Product Title</label>
-                        <input type="text" name="title" placeholder="" class="input_color" style="border-radius: 6px;" required="">
+                        <input type="text" name="title" placeholder="" class="input_color" style="border-radius: 6px;" required="" value="{{$product->title}}">
                     </div>
                     <div class="div_design">
                         <label for="">Product Description</label>
-                        <input type="text" name="description" placeholder="" class="input_color" style="border-radius: 6px;" required="">
+                        <input type="text" name="description" placeholder="" class="input_color" style="border-radius: 6px;" required="" value="{{$product->description}}">
                     </div>                
                     <div class="div_design">
                         <label for="">Product Price</label>
-                        <input type="number" name="price" placeholder="" class="input_color" style="border-radius: 6px;" required="">
+                        <input type="number" name="price" placeholder="" class="input_color" style="border-radius: 6px;" required="" value="{{$product->price}}">
                     </div>
                     <div class="div_design">
                         <label for="">Discount Price</label>
-                        <input type="number" name="dis_price" placeholder="" class="input_color" style="border-radius: 6px;">
+                        <input type="number" name="dis_price" placeholder="" class="input_color" style="border-radius: 6px;" value="{{$product->discount_price}}">
                     </div>                
                     <div class="div_design">
                         <label for="">Product Quantity</label>
-                        <input type="number" name="quantity" min="0" placeholder="" class="input_color" style="border-radius: 6px;" required="">
+                        <input type="number" name="quantity" min="0" placeholder="" class="input_color" style="border-radius: 6px;" required="" value="{{$product->quantity}}">
                     </div>                                
                     <div class="div_design">
                         <label for="">Product Category</label>
                         <select name="category" id="select" style="border-radius: 6px;" required="">
-                            <option value="" selected>Choose Category</option>
+                            <option value="{{$product->category}}" selected="">{{$product->category}}</option>
                             @foreach($category as $category)
                             <option value="{{$category->category_name}}">{{$category->category_name}}</option>
-                            @endforeach
+                            @endforeach                            
                         </select>                    
+                    </div>                    
+                    <div class="div_design">                        
+                        <img src="/product/{{$product->image}}" style="max-height: 200px; width: auto;" alt="">
                     </div>
-                    <div class="div_design">
-                        <label for="">Product Image</label>
-                        <input type="file" name="image" placeholder="" class="input_color" style="border-radius: 6px;" required="">
+                    <div class="div_design">                        
+                        <label for="">Change Image</label>
+                        <input type="file" name="image" placeholder="" class="input_color" style="border-radius: 6px;">
                     </div>                                                
                     <div class="div_design">
-                        <input type="submit" value="Add Product" class="btn btn-success" style="width: 25%; margin-top: 40px; font-size: 20px;">
+                        <input type="submit" value="Update Product" class="btn btn-primary" style="width: 25%; margin-top: 40px; font-size: 20px;">
                     </div>
                 </form>
+
+
             </div>
           </div>
         </div>        
