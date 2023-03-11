@@ -75,19 +75,19 @@
                 <img src="product/{{$product->image}}" alt="">
             </div>
             <div class="container-right">
-                <h1 style="font-weight: bold; text-transform: uppercase; font-family: 'Montserrat';">{{$product->title}}</h1>                
+                <h1 style="font-weight: bold; text-transform: uppercase; font-family: 'Montserrat'; font-size: 36px;">{{$product->title}}</h1>                
                 <span>
                     @if($product->discount_price != null)
-                    <h5 style="text-decoration: line-through; font-size: 16px; color: #aaaaaa">
-                        Rp{{$product->price}}
-                    </h5>                        
-                    <h4>
-                        Rp{{$product->discount_price}}
-                    </h4>                                                 
-                    @else                                                
-                    <h4>
+                    <h4 style="text-decoration: line-through; font-size: 16px; color: #aaaaaa">
                         Rp{{$product->price}}
                     </h4>                        
+                    <h3 style="font-size: 28px;">
+                        Rp{{$product->discount_price}}
+                    </h3>                                                 
+                    @else                                                
+                    <h3 style="font-size: 28px;">
+                        Rp{{$product->price}}
+                    </h3>                        
                     @endif                    
                 </span>
                 <h5 style="color: #aaaaaa">Category: {{$product->category}}</h5>
@@ -96,9 +96,20 @@
                 </p>
                 
                 <div class="buy">
-                    <p>Stock: {{$product->quantity}}</p>
-                    <a href="" class="btn btn-success">Add to Cart</a>
+                    <p>Stock: {{$product->quantity}}</p>                    
                 </div>
+
+                <form action="{{url('add_cart', $product->id)}}" method="Post">
+                    @csrf
+                    <div class="row">
+                        <div class="col-md-2">
+                            <input type="number" name="quantity" value="1" min="1" style="height: 50px; width: 90px;">                                                                            
+                        </div>         
+                        <div class="col-md-2">
+                            <input type="submit" value="Add to Cart" style="border-radius: 24px;">
+                        </div>                        
+                    </div>
+                </form>                
             </div>
         </div>
 
