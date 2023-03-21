@@ -107,7 +107,7 @@
                         <input type="file" name="image" placeholder="" class="input_color" style="border-radius: 6px;">
                     </div>                                                
                     <div class="div_design">
-                        <input type="submit" value="Update Product" class="btn btn-primary" style="width: 25%; margin-top: 40px; font-size: 20px;">
+                        <input type="submit" value="Update Product" class="btn btn-primary" style="width: 50%; margin-top: 40px; font-size: 20px;">
                     </div>
                 </form>
 
