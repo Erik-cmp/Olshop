@@ -47,6 +47,7 @@
 
         .container-left img{
             max-width: 100%;
+            max-height: 100vh;
         }
 
         .container-right{

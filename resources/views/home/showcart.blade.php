@@ -136,7 +136,7 @@
         <div>
           <h1 class="header2">Payment Type:</h1>
           <a href="{{url('cash_order')}}" class="btn btn-success">Cash On Delivery</a>
-          <a href="" class="btn btn-success">Pay Using Card</a>
+          <a href="{{url('stripe', $totalprice)}}" class="btn btn-success">Pay Using Card</a>
         </div>
 
       </div>
