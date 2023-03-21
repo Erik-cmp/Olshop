@@ -76,6 +76,8 @@
 
             <div class="div_center">
                 <h2>Manage Orders</h2>
+                <br>
+                <a href="{{url('printall')}}" class="btn btn-primary" style="padding: 8px; font-size: 20px; font-weight: bold; width: 20%;">Print All</a>
             </div>
 
             <div class="table-container">
@@ -91,7 +93,7 @@
                         <th>Payment Status</th>
                         <th>Delivery Status</th>
                         <th>Image</th>              
-                        <th>Action</th>          
+                        <th colspan="2">Action</th>          
                     </tr>
 
                     @foreach($order as $order)
@@ -120,7 +122,10 @@
                         <td style="color: #ccc">
                             Order Completed
                         </td>
-                        @endif                                                
+                        @endif                   
+                        <td>
+                          <a href="{{url('print_pdf', $order->id)}}" class="btn btn-success">Print</a>
+                        </td>                             
                     </tr>
                     @endforeach
                 </table>

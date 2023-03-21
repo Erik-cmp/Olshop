@@ -55,6 +55,10 @@ route::get('/deliver/{id}',[AdminController::class, 'deliver']);
 
 route::get('/delivered/{id}',[AdminController::class, 'delivered']);
 
+route::get('/print_pdf/{id}',[AdminController::class, 'print_pdf']);
+
+route::get('/printall',[AdminController::class, 'printall']);
+
 route::get('/product_details/{id}',[HomeController::class, 'product_details']);
 
 route::post('/add_cart/{id}',[HomeController::class, 'add_cart']);
