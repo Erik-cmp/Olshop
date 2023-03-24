@@ -93,7 +93,7 @@
                         <th>Payment Status</th>
                         <th>Delivery Status</th>
                         <th>Image</th>              
-                        <th colspan="2">Action</th>          
+                        <th colspan="3">Action</th>          
                     </tr>
 
                     @foreach($order as $order)
@@ -125,7 +125,10 @@
                         @endif                   
                         <td>
                           <a href="{{url('print_pdf', $order->id)}}" class="btn btn-success">Print</a>
-                        </td>                             
+                        </td>               
+                        <td>
+                        <a href="{{url('send_email', $order->id)}}" class="btn btn-info">Message</a>
+                        </td>              
                     </tr>
                     @endforeach
                 </table>

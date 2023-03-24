@@ -59,6 +59,10 @@ route::get('/print_pdf/{id}',[AdminController::class, 'print_pdf']);
 
 route::get('/printall',[AdminController::class, 'printall']);
 
+route::get('/send_email/{id}',[AdminController::class, 'send_email']);
+
+route::post('/send_user_email/{id}',[AdminController::class, 'send_user_email']);
+
 route::get('/product_details/{id}',[HomeController::class, 'product_details']);
 
 route::post('/add_cart/{id}',[HomeController::class, 'add_cart']);
