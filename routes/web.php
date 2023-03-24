@@ -63,6 +63,12 @@ route::get('/send_email/{id}',[AdminController::class, 'send_email']);
 
 route::post('/send_user_email/{id}',[AdminController::class, 'send_user_email']);
 
+route::get('/search_order',[AdminController::class, 'search_order']);
+
+
+
+// Home Controller
+
 route::get('/product_details/{id}',[HomeController::class, 'product_details']);
 
 route::post('/add_cart/{id}',[HomeController::class, 'add_cart']);

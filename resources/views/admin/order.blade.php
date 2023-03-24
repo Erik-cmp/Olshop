@@ -53,6 +53,10 @@
             max-height: 200px;
             width: auto;
         }
+
+        input[type="text"]{
+          background-color : #151515; 
+        }        
     </style>  
   </head>
   <body>
@@ -77,7 +81,13 @@
             <div class="div_center">
                 <h2>Manage Orders</h2>
                 <br>
-                <a href="{{url('printall')}}" class="btn btn-primary" style="padding: 8px; font-size: 20px; font-weight: bold; width: 20%;">Print All</a>
+                <a href="{{url('printall')}}" class="btn btn-primary" style="padding: 8px; font-size: 20px; font-weight: bold; width: 15%;">Print All</a>
+
+                <form action="{{url('search_order')}}" method="get" style="padding-top: 32px;">
+                    @csrf
+                    <input type="text" name="search" placeholder="Search Order by name" style="margin-right: 10px; border-radius: 6px; width: 25%">
+                    <input type="submit" value="Search" class="btn btn-success">
+                </form>
             </div>
 
             <div class="table-container">
@@ -96,7 +106,7 @@
                         <th colspan="3">Action</th>          
                     </tr>
 
-                    @foreach($order as $order)
+                    @forelse($order as $order)
                     <tr>
                         <td>{{$order->name}}</td>
                         <td>{{$order->email}}</td>
@@ -130,7 +140,15 @@
                         <a href="{{url('send_email', $order->id)}}" class="btn btn-info">Message</a>
                         </td>              
                     </tr>
-                    @endforeach
+
+                    @empty                    
+                    <tr>
+                      <td colspan="16" style="font-size: 20px; font-weight: bold;">
+                        No Data Found
+                      </td>
+                    </tr>         
+
+                    @endforelse
                 </table>
             </div>
           </div>        
