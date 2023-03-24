@@ -46,8 +46,9 @@ class HomeController extends Controller
             $total_delivered = order::where('delivery_status', '=', 'Delivered')->count();
             $total_delivering = order::where('delivery_status', '=', 'Delivering')->count();
             $total_processing = order::where('delivery_status', '=', 'Processing')->count();
+            $total_cancelled = order::where('delivery_status', '=', 'Order Cancelled')->count();
 
-            return view('admin.home', compact('total_product', 'total_order', 'total_user', 'total_revenue', 'total_delivered', 'total_delivering', 'total_processing'));
+            return view('admin.home', compact('total_product', 'total_order', 'total_user', 'total_revenue', 'total_delivered', 'total_delivering', 'total_processing', 'total_cancelled'));
         }
         else
         {
@@ -198,4 +199,28 @@ class HomeController extends Controller
               
         return back();
     }    
+
+    public function show_order()
+    {
+        if(Auth::id())
+        {
+            $user = Auth::user();
+            $userid = $user->id;
+            $order = order::where('user_id', '=', $userid)->get();
+            return view('home.order', compact('order'));
+        }
+        else
+        {
+            return redirect('login');
+        }
+    }
+
+    public function cancel_order($id)
+    {
+        $order = order::find($id);
+        $order->delivery_status = 'Order Cancelled';
+        $order->save();
+
+        return redirect()->back();
+    }
 }

@@ -66,90 +66,75 @@
             padding: 14px;
         }
 
-        .center tr td:nth-child(4){
+        .center tr td:nth-child(6){
           width: 15%;          
-        }   
+        } 
         
-        .center tr td:nth-child(5){
-          width: 10%;          
-        }          
-
+        .center tr td:nth-child(7){
+          width: 5%;          
+        }           
+        
         .header{
             font-family: 'Arial';
             font-size: 36px;
             font-weight: bold;
             margin-top: 24px;
-        }
-
-        .header2{
-            font-family: 'Arial';
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 18px;
-            margin-bottom: 18px;
-        }        
+        }   
     </style>      
    </head>
    <body>
       <div class="hero_area">
          <!-- header section strats -->
         @include('home.header')         
-         <!-- end header section -->      
+         <!-- end header section -->
 
-      @if(session()->has('message'))
-        <div class="alert alert-success">
-          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-            {{session()->get('message')}}
-          </div>
-      @endif
-      
-      <h1 style="font-size: 32px; font-weight: bold; font-family: 'Arial'; text-align: center; padding-top: 32px;">My Cart</h1>
+        <h1 style="font-size: 32px; font-weight: bold; font-family: 'Arial'; text-align: center; padding-top: 32px;">My Order</h1>
 
-      <div class="table-container">
-        <table class="center">
-            <tr>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Image</th>
-                <th>Action</th>
-            </tr>
-            <?php 
-                $totalprice = 0;
-            ?>
-            @foreach($cart as $cart)
-            <tr>
-                <td>{{$cart->product_title}}</td>
-                <td>{{$cart->quantity}}</td>
-                <td>Rp{{$cart->price}}</td>
-                <td><img src="/product/{{$cart->image}}"></td>
-                <td><a href="{{url('remove_cart', $cart->id)}}" class="btn btn-danger" onclick="return confirm('Confirm product removal?')">Remove</a></td>
-            </tr>
-            <?php 
-                $totalprice = $totalprice + $cart->price;
-            ?>
-            @endforeach            
-        </table>
+        @if(session()->has('message'))
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                {{session()->get('message')}}
+            </div>
+        @endif
 
-        <div>
-            <h1 class="header">Total Price: Rp{{$totalprice}}</h1>
-        </div>
+        <div class="table-container">
+            <table class="center">
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Payment Status</th>
+                    <th>Delivery Status</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>      
 
-        <div>
-          <h1 class="header2">Payment Type:</h1>
-          <a href="{{url('cash_order')}}" class="btn btn-success">Cash On Delivery</a>
-          <a href="{{url('stripe', $totalprice)}}" class="btn btn-success">Pay Using Card</a>
-        </div>
+                @foreach($order as $order)    
+                <tr>
+                    <td>{{$order->product_title}}</td>
+                    <td>{{$order->quantity}}</td>
+                    <td>Rp{{$order->price}}</td>
+                    <td>{{$order->payment_status}}</td>
+                    <td>{{$order->delivery_status}}</td>
+                    <td>
+                        <img src="product/{{$order->image}}" alt="">
+                    </td>
+                    <td>
+                        @if($order->delivery_status == 'Processing')
+                        <a onclick="return confirm('Confirm Cancellation?')" href="{{url('cancel_order', $order->id)}}" class="btn btn-danger">Cancel</a>
+                        @else
+                        <a href="" class="btn btn-secondary" style="pointer-events: none; color: #ccc">Cancel</a>
+                        @endif
+                    </td>
+                </tr>   
+                @endforeach
 
+            </table>
+        </div>     
       </div>
 
-      <div class="cpy_">
-         <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
-         
-            Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
-         
-         </p>
-      </div>
+ 
+
       <!-- jQery -->
       <script src="home/js/jquery-3.4.1.min.js"></script>
       <!-- popper js -->

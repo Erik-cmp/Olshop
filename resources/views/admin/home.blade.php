@@ -3,7 +3,7 @@
   <head>
     @include('admin.css')
   </head>
-  <body>
+  <body>    
     <div class="container-scroller">
       <!-- partial:partials/_sidebar.html -->
         @include('admin.sidebar')

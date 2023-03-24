@@ -4,8 +4,9 @@
   }
 </style>
 
-<div class="main-panel">
+<div class="main-panel">        
           <div class="content-wrapper">
+          <h1 style="text-align: center; padding-bottom: 32px; font-size: 32px; font-weight: bold;">Dashboard</h1>
             <div class="row">
               <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
                 <div class="card">
@@ -107,6 +108,20 @@
                   </div>
                 </div>
               </div>
+              <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-9">
+                        <div class="d-flex align-items-center align-self-start">
+                          <h3 class="mb-0">{{$total_cancelled}}</h3>                          
+                        </div>
+                      </div>
+                    </div>
+                    <h6 class="text-muted font-weight-normal">Cancelled Orders</h6>
+                  </div>
+                </div>
+              </div>              
             </div>                                    
           </div>
           <!-- content-wrapper ends -->

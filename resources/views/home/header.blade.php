@@ -1,4 +1,4 @@
-<header class="header_section">
+<header class="header_section" style="box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16);">
             <div class="container">
                <nav class="navbar navbar-expand-lg custom_nav-container ">
                   <a class="navbar-brand" href="{{url('/')}}"><img width="64" src="images/logo2.svg" alt="#" /></a>
@@ -18,9 +18,6 @@
                            </ul>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="product.html">Products</a>
-                        </li>
-                        <li class="nav-item">
                            <a class="nav-link" href="blog_list.html">Blog</a>
                         </li>
                         <li class="nav-item">
@@ -28,7 +25,10 @@
                         </li>
                         <li class="nav-item">
                            <a class="nav-link" href="{{url('show_cart')}}">Cart</a>
-                        </li>                        
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="{{url('show_order')}}">Order</a>
+                        </li>                                                
                         <form class="form-inline">
                            <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
                            <i class="fa fa-search" aria-hidden="true"></i>
