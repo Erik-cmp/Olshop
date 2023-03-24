@@ -6,17 +6,6 @@ use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\AdminController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 route::get('/',[HomeController::class, 'index']);
 
 Route::middleware([
@@ -30,6 +19,10 @@ Route::middleware([
 });
 
 route::get('/redirect',[HomeController::class, 'redirect'])->middleware('auth', 'verified');
+
+
+
+// Admin View
 
 route::get('/view_category',[AdminController::class, 'view_category']);
 
@@ -67,7 +60,7 @@ route::get('/search_order',[AdminController::class, 'search_order']);
 
 
 
-// Home Controller
+// User View
 
 route::get('/product_details/{id}',[HomeController::class, 'product_details']);
 
