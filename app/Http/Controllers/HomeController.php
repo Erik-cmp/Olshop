@@ -223,4 +223,12 @@ class HomeController extends Controller
 
         return redirect()->back();
     }
+
+    public function product_search(Request $request)
+    {
+        $search_text = $request->search;
+        $product = product::where('title', 'LIKE', '%' . $search_text . '%')->paginate(9);
+
+        return view('home.userpage', compact('product', 'search_text'));
+    }
 }
