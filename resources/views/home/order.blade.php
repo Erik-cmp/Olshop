@@ -88,6 +88,8 @@
         @include('home.header')         
          <!-- end header section -->
 
+         <div style="height: 100px;"></div>
+
         <h1 style="font-size: 32px; font-weight: bold; font-family: 'Arial'; text-align: center; padding-top: 32px;">My Order</h1>
 
         @if(session()->has('message'))

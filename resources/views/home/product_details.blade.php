@@ -71,7 +71,7 @@
         @include('home.header')         
          <!-- end header section -->      
 
-        <div class="product-container">
+        <div class="product-container" style="padding-top: 100px;">
             <div class="container-left">
                 <img src="product/{{$product->image}}" alt="">
             </div>

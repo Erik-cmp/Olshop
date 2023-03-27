@@ -1,5 +1,5 @@
-<section class="slider_section ">
-            <div class="slider_bg_box">
+<section class="slider_section">
+            <div class="slider_bg_box" style="padding-top: 100px;">
                <img src="images/slider-bg.jpg" alt="">
             </div>
             <div id="customCarousel1" class="carousel slide" data-ride="carousel">

@@ -1,4 +1,4 @@
-<header class="header_section" style="box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16); position: fixed; width: 100%; background-color: #fff; z-index: 69;">
+<header class="header_section" style="box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16); position: fixed; width: 100%; background-color: #fff; z-index: 69; height: 100px;">
             <div class="container">
                <nav class="navbar navbar-expand-lg custom_nav-container ">
                   <a class="navbar-brand" href="{{url('/')}}"><img width="64" src="images/logo2.svg" alt="#" /></a>

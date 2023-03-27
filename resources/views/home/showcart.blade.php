@@ -96,6 +96,8 @@
         @include('home.header')         
          <!-- end header section -->      
 
+         <div style="height: 100px;"></div>
+
       @if(session()->has('message'))
         <div class="alert alert-success">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
