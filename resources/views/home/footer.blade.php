@@ -1,10 +1,32 @@
+<style>
+   
+   .information_f p{
+      color: #000;
+   }
+
+   .logo_footer{
+      display: flex;      
+      align-items: center;
+      gap: 16px;
+   }
+
+   .logo_footer p{
+      color: #004AAD;
+      font-size: 48px;    
+      font-weight: bold;
+      font-family: 'Bebas Neue';  
+      letter-spacing: 2px;
+   }
+</style>
+
 <footer>
          <div class="container">
             <div class="row">
                <div class="col-md-4">
                    <div class="full">
-                      <div class="logo_footer">
-                        <a href="#"><img width="210" src="images/logo.png" alt="#" /></a>
+                      <div class="logo_footer">                                                              
+                        <a href="#"><img width="64" src="images/logo2.svg" alt="#" /></a>
+                        <p>PETHAUS</p>                        
                       </div>
                       <div class="information_f">
                         <p><strong>ADDRESS:</strong> 28 White tower, Street Name New York City, USA</p>

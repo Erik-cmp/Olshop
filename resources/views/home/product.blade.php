@@ -27,7 +27,7 @@
                               @csrf
                               <div class="row">
                                  <div class="col-md-4">
-                                    <input type="number" name="quantity" value="1" min="1" style="height: 50px; width: 70px;">
+                                    <input type="number" name="quantity" value="1" min="1" max="{{$products->quantity}}" style="height: 50px; width: 70px;">                       
                                  </div>
                                  <div class="col-md-4">
                                     <input type="submit" value="Add" style="border-radius: 24px;">

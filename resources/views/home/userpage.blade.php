@@ -20,6 +20,9 @@
       <link href="home/css/style.css" rel="stylesheet" />
       <!-- responsive style -->
       <link href="home/css/responsive.css" rel="stylesheet" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">      
    </head>
    <body>
       <div class="hero_area">
@@ -46,17 +49,13 @@
         @include('home.subscribe')
       <!-- end subscribe section -->
       <!-- client section -->
-        @include('home.client')
+        <!-- @include('home.client') -->
       <!-- end client section -->
       <!-- footer start -->
         @include('home.footer')
       <!-- footer end -->
       <div class="cpy_">
-         <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
-         
-            Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
-         
-         </p>
+         <p class="mx-auto">© 2023 All Rights Reserved By <a href="https://html.design/"><strong>Pethaus .co</strong></a><br></p>
       </div>
 
       <script>

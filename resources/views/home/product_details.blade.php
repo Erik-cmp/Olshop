@@ -97,14 +97,18 @@
                 </p>
                 
                 <div class="buy">
-                    <p>Stock: {{$product->quantity}}</p>                    
+                    @if($product->quantity > 0)
+                        <p>Stock: {{$product->quantity}}</p>
+                    @else
+                        <p>Product out of stock</p>
+                    @endif                
                 </div>
 
                 <form action="{{url('add_cart', $product->id)}}" method="Post">
                     @csrf
                     <div class="row">
                         <div class="col-md-2">
-                            <input type="number" name="quantity" value="1" min="1" style="height: 50px; width: 90px;">                                                                            
+                            <input type="number" name="quantity" value="1" min="1" max="{{$product->quantity}}" style="height: 50px; width: 90px;">                                                                            
                         </div>         
                         <div class="col-md-2">
                             <input type="submit" value="Add to Cart" style="border-radius: 24px;">

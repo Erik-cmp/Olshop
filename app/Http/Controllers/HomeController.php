@@ -144,9 +144,14 @@ class HomeController extends Controller
             $order->payment_status = 'Cash on delivery';
             $order->delivery_status = 'Processing';
             $order->save();
-
+                 
             $cart_id = $data->id;
             $cart = cart::find($cart_id);
+            
+            $product = product::find($data->product_id);
+            $product->quantity = $product->quantity - $data->quantity;        
+            $product->save();  
+
             $cart->delete();
         }
 
@@ -192,6 +197,11 @@ class HomeController extends Controller
 
             $cart_id = $data->id;
             $cart = cart::find($cart_id);
+
+            $product = product::find($data->product_id);                  
+            $product->quantity = $product->quantity - $data->quantity;                    
+            $product->save();            
+                                    
             $cart->delete();
         }        
       

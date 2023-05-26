@@ -1,7 +1,34 @@
-<x-guest-layout>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+   .information_f p{
+      color: #000;
+   }
+
+   .logo_footer{
+      display: flex;      
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+   }
+
+   .logo_footer p{
+      color: #004AAD;
+      font-size: 48px;    
+      font-weight: bold;
+      font-family: 'Bebas Neue';  
+      letter-spacing: 2px;
+   }    
+
+</style>
+
+<x-guest-layout>    
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+            <div class="logo_footer">                                                              
+                <a href="#"><img width="64" src="images/logo2.svg" alt="#" /></a>
+                <p>PETHAUS</p>                        
+            </div>
         </x-slot>
 
         <x-validation-errors class="mb-4" />
@@ -46,3 +73,5 @@
         </form>
     </x-authentication-card>
 </x-guest-layout>
+
+

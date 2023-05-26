@@ -1,6 +1,20 @@
+<style>
+   .detail-box p{
+      color: black;
+   }
+
+   .detail-box h1 span{
+      font-size: 56px;
+   }
+
+   .subheading{
+      font-size: 36px;                  
+   }
+</style>
+
 <section class="slider_section">
             <div class="slider_bg_box" style="padding-top: 100px;">
-               <img src="images/slider-bg.jpg" alt="">
+               <img src="images/bg2.jpg" alt="">
             </div>
             <div id="customCarousel1" class="carousel slide" data-ride="carousel">
                <div class="carousel-inner">
@@ -11,13 +25,14 @@
                               <div class="detail-box">
                                  <h1>
                                     <span>
-                                    Sale 20% Off
-                                    </span>
-                                    <br>
-                                    On Everything
+                                    New Arrivals
+                                    </span>   
+                                    <div class="subheading">
+                                       Introductory Offer on Pet Supplies
+                                    </div>                                                                     
                                  </h1>
                                  <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                                    Discover our latest arrivals in pet supplies and enjoy special introductory discounts. Be the first to get your paws on these high-quality products!
                                  </p>
                                  <div class="btn-box">
                                     <a href="" class="btn1">
@@ -36,13 +51,15 @@
                               <div class="detail-box">
                                  <h1>
                                     <span>
-                                    Sale 20% Off
+                                    Limited-Time Offer
                                     </span>
                                     <br>
-                                    On Everything
+                                    <div class="subheading">
+                                    Discounts on Pet Essentials
+                                    </div>                                    
                                  </h1>
                                  <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                                 Don't miss out on exclusive discounts on essential pet supplies. From food and treats to hygiene products, we've got you covered!
                                  </p>
                                  <div class="btn-box">
                                     <a href="" class="btn1">
@@ -61,13 +78,15 @@
                               <div class="detail-box">
                                  <h1>
                                     <span>
-                                    Sale 20% Off
+                                    Special Offer
                                     </span>
                                     <br>
-                                    On Everything
+                                    <div class="subheading">
+                                    20% Off Everything for Your Pets
+                                    </div>                                    
                                  </h1>
                                  <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                                 Treat your pets with love and care while enjoying exclusive discounts on our entire collection of pet supplies. Don't miss out!
                                  </p>
                                  <div class="btn-box">
                                     <a href="" class="btn1">
