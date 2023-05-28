@@ -142,7 +142,7 @@ class HomeController extends Controller
             $order->image = $data->image;            
             $order->product_id = $data->product_id;
             $order->payment_status = 'Cash on delivery';
-            $order->delivery_status = 'Processing';
+            $order->delivery_status = 'Processing';            
             $order->save();
                  
             $cart_id = $data->id;

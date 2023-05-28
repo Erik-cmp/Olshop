@@ -109,6 +109,7 @@
                     <th>Delivery Status</th>
                     <th>Image</th>
                     <th>Action</th>
+                    <th>Bought At</th>
                 </tr>      
 
                 @foreach($order as $order)    
@@ -128,6 +129,7 @@
                         <a href="" class="btn btn-secondary" style="pointer-events: none; color: #ccc">Cancel</a>
                         @endif
                     </td>
+                    <td>{{$order->created_at}}</td>
                 </tr>   
                 @endforeach
 

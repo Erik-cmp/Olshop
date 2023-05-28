@@ -43,6 +43,7 @@ class testNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
+                    ->subject($this->details['subject'])
                     ->greeting($this->details['greeting'])
                     ->line($this->details['firstline'])
                     ->line($this->details['body'])

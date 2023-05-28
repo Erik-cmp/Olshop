@@ -29,7 +29,7 @@
                 <li class="nav-item"> <a class="nav-link" href="{{url('/show_product')}}">Show Product</a></li>
               </ul>
             </div>
-          </li>
+          </li>                    
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{url('view_category')}}">
               <span class="menu-icon">
@@ -45,7 +45,7 @@
               </span>
               <span class="menu-title">Order</span>
             </a>
-          </li>                  
+          </li>                       
         </ul>
       </nav>
       

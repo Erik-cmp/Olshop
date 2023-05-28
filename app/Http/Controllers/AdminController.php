@@ -158,6 +158,7 @@ class AdminController extends Controller
     {
         $order = order::find($id);
         $details = [
+            'subject' => $request->subject,
             'greeting' => $request->greeting,
             'firstline' => $request->firstline,
             'body' => $request->body,

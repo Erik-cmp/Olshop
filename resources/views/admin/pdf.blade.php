@@ -27,6 +27,8 @@
     <h3>Product Quantity    : <span>{{$order->quantity}}</span></h3>
     <h3>Payment Status      : <span>{{$order->payment_status}}</span></h3>
     <h3>Image               : </h3>
+    <h3>Date Bought         : <span>{{$order->created_at}}</span></h3>
+    <h3>Last Updated        : <span>{{$order->updated_at}}</span></h3>
     <br>
     <img src="product/{{$order->image}}" style="max-height: 300px;">    
 </body>

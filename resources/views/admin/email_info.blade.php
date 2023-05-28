@@ -70,6 +70,10 @@
                 <form action="{{url('send_user_email', $order->id)}}" method="POST" class="form_add">
                     @csrf
                     <div class="div_design">
+                        <label for="">Subject  :</label>
+                        <input type="text" name="subject" class="input_color" style="border-radius: 6px;">
+                    </div>                    
+                    <div class="div_design">
                         <label for="">Greeting  :</label>
                         <input type="text" name="greeting" class="input_color" style="border-radius: 6px;">
                     </div>

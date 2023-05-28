@@ -103,6 +103,8 @@
                         <th>Payment Status</th>
                         <th>Delivery Status</th>
                         <th>Image</th>              
+                        <th>Date Paid</th>
+                        <th>Last Updated</th>
                         <th colspan="3">Action</th>          
                     </tr>
 
@@ -116,10 +118,12 @@
                         <td>{{$order->quantity}}</td>
                         <td>Rp{{$order->price}}</td>
                         <td>{{$order->payment_status}}</td>
-                        <td>{{$order->delivery_status}}</td>
+                        <td>{{$order->delivery_status}}</td>                         
                         <td>
                             <img src="/product/{{$order->image}}" alt="">
                         </td>
+                        <td>{{$order->created_at}}</td>       
+                        <td>{{$order->updated_at}}</td>                        
                         @if($order->delivery_status == 'Processing')
                         <td>
                             <a href="{{url('deliver', $order->id)}}" class="btn btn-primary" onclick="return confirm('Confirm Action?')">Deliver</a>
@@ -138,7 +142,7 @@
                         </td>               
                         <td>
                         <a href="{{url('send_email', $order->id)}}" class="btn btn-info">Message</a>
-                        </td>              
+                        </td>             
                     </tr>
 
                     @empty                    
