@@ -7,14 +7,14 @@
                   </button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                      <ul class="navbar-nav">
-                        <li class="nav-item active">
-                           <a class="nav-link" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
+                        <li class="nav-item {{ $activePage === 'home' ? 'active' : '' }}">
+                           <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="{{url('show_cart')}}">Cart</a>
+                        <li class="nav-item {{ $activePage === 'cart' ? 'active' : '' }}">
+                           <a class="nav-link" href="{{ url('show_cart') }}">Cart</a>
                         </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="{{url('show_order')}}">Order</a>
+                        <li class="nav-item {{ $activePage === 'order' ? 'active' : '' }}">
+                           <a class="nav-link" href="{{ url('show_order') }}">Order</a>
                         </li>                                                
                         @if (Route::has('login'))                        
 

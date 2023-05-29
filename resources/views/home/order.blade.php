@@ -134,7 +134,13 @@
                 @endforeach
 
             </table>
-        </div>     
+        </div>   
+        
+        @include('home.footer')
+        <div class="cpy_">
+        <p class="mx-auto">© 2023 All Rights Reserved By <a href="">Pethaus.co</a><br>                                       
+         </p>
+      </div>        
       </div>
 
  

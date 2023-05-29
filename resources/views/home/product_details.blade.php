@@ -98,9 +98,9 @@
                 
                 <div class="buy">
                     @if($product->quantity > 0)
-                        <p>Stock: {{$product->quantity}}</p>
+                        <p style="font-weight: bold;">Stock: {{$product->quantity}}</p>
                     @else
-                        <p>Product out of stock</p>
+                        <p style="color: #A90011; font-weight: bold;">Product out of stock</p>
                     @endif                
                 </div>
 
@@ -122,10 +122,7 @@
         @include('home.footer')
       <!-- footer end -->
       <div class="cpy_">
-         <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
-         
-            Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
-         
+         <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>                              
          </p>
       </div>
       <!-- jQery -->
