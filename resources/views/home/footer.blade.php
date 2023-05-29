@@ -29,9 +29,9 @@
                         <p>PETHAUS</p>                        
                       </div>
                       <div class="information_f">
-                        <p><strong>ADDRESS:</strong> 28 White tower, Street Name New York City, USA</p>
-                        <p><strong>TELEPHONE:</strong> +91 987 654 3210</p>
-                        <p><strong>EMAIL:</strong> yourmain@gmail.com</p>
+                        <p><strong>ADDRESS:</strong> Jl. Kuningan Barat No. 15A, Kuningan, Jakarta Selatan, 12940, Indonesia</p>
+                        <p><strong>TELEPHONE:</strong> +62 21 1234 5678</p>
+                        <p><strong>EMAIL:</strong> info@pethaus.co.id</p>
                       </div>
                    </div>
                </div>

@@ -62,7 +62,8 @@ class HomeController extends Controller
     public function product_details($id)
     {
         $product = product::find($id);
-        return view('home.product_details', compact('product'));
+        $activePage = 'home';
+        return view('home.product_details', compact('product', 'activePage'));
     }
 
     public function add_cart(Request $request, $id)
@@ -210,7 +211,7 @@ class HomeController extends Controller
       
         Session::flash('success', 'Payment successful!');
               
-        return back();
+        return redirect('/show_order');
     }    
 
     public function show_order()
@@ -235,6 +236,10 @@ class HomeController extends Controller
         $order = order::find($id);
         $order->delivery_status = 'Order Cancelled';
         $order->save();
+
+        $product = product::find($order->product_id);
+        $product->quantity = $product->quantity + $order->quantity;
+        $product->save();
 
         return redirect()->back();
     }
