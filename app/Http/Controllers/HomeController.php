@@ -22,7 +22,8 @@ class HomeController extends Controller
     public function index()
     {
         $product = Product::paginate(9);
-        return view('home.userpage', compact('product'));
+        $activePage = 'home';
+        return view('home.userpage', compact('product', 'activePage'));
     }
 
     public function redirect()
@@ -53,7 +54,8 @@ class HomeController extends Controller
         else
         {
             $product = Product::paginate(9);
-            return view('home.userpage', compact('product'));
+            $activePage = 'home';
+            return view('home.userpage', compact('product', 'activePage'));
         }
     }
 
@@ -107,7 +109,8 @@ class HomeController extends Controller
         {
             $id = Auth::user()->id;
             $cart = cart::where('user_id', '=', $id)->get();
-            return view('home.showcart', compact('cart'));
+            $activePage = 'cart';
+            return view('home.showcart', compact('cart', 'activePage'));
         }
         else
         {
@@ -217,7 +220,9 @@ class HomeController extends Controller
             $user = Auth::user();
             $userid = $user->id;
             $order = order::where('user_id', '=', $userid)->get();
-            return view('home.order', compact('order'));
+            $activePage = 'order';
+
+            return view('home.order', compact('order', 'activePage'));
         }
         else
         {
@@ -238,7 +243,8 @@ class HomeController extends Controller
     {
         $search_text = $request->search;
         $product = product::where('title', 'LIKE', '%' . $search_text . '%')->paginate(9);
+        $activePage = 'home';
 
-        return view('home.userpage', compact('product', 'search_text'));
+        return view('home.userpage', compact('product', 'search_text', 'activePage'));
     }
 }
