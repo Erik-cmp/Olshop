@@ -40,18 +40,20 @@
                         <img src="product/{{$products->image}}" alt="">
                      </div>
                      <div class="detail-box">
-                        <h6>
+                        <h6 style="text-align: left;">
                            {{$products->title}}
                         </h6>
                         @if($products->discount_price != null)
-                        <h6 style="text-decoration: line-through; font-size: 14px; color: #aaaaaa">
-                           Rp{{$products->price}}
-                        </h6>                        
-                        <h5>
-                           Rp{{$products->discount_price}}
-                        </h5>                                                 
+                        <div class="flex" style="display: flex; flex-direction: column;">
+                           <h6 style="text-decoration: line-through; font-size: 14px; color: #aaaaaa; margin-bottom: 0; text-align: left;">
+                              Rp{{$products->price}}
+                           </h6>                        
+                           <h5 style="font-weight: bold; margin-top: 4px; text-align: left;">
+                              Rp{{$products->discount_price}}
+                           </h5> 
+                        </div>                                                
                         @else                                                
-                        <h6>
+                        <h6 style="font-weight: bold;">
                            Rp{{$products->price}}
                         </h6>                        
                         @endif                         
