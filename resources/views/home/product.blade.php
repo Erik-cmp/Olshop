@@ -64,7 +64,7 @@
                @empty
                <div style="width: 100%">
                   <h1 style="font-family: 'Arial'; text-align: center; font-size: 32px;">
-                     No Results for <span style="font-weight: bold;">{{$search_text}}</span>.
+                     No Results.
                   </h1>
                </div>
 

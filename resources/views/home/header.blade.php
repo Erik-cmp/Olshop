@@ -15,7 +15,7 @@
                         </li>
                         <li class="nav-item {{ $activePage === 'order' ? 'active' : '' }}">
                            <a class="nav-link" href="{{ url('show_order') }}">Order</a>
-                        </li>                                                
+                        </li>                                                                                    
                         @if (Route::has('login'))                        
 
                         @auth                        
